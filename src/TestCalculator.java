@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class TestCalculator {
+	
 	public static void main(String args[])
 	{
 		org.junit.runner.JUnitCore.main("TestCalculator");
@@ -26,5 +27,10 @@ public class TestCalculator {
 	public void unknownNumber()
 	{
 		assertEquals(15,calculator.Add("1,2,3,4,5"));
+	}
+	@Test
+	public void newLine()
+	{
+		assertEquals(6,calculator.Add("1\n2,3"));
 	}
 }

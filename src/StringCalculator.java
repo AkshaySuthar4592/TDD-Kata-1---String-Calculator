@@ -14,7 +14,8 @@ public class StringCalculator {
 			return 0;
 		else
 		{
-			String num[] = numbers.split(",");
+			String delimiter = ",";
+			String num[] = numbers.split(delimiter+"|\n");
 			return sumOfNumbers(num);
 		}
 	}
