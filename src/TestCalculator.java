@@ -22,4 +22,9 @@ public class TestCalculator {
 	{
 		assertEquals(3,calculator.Add("1,2"));
 	}
+	@Test
+	public void unknownNumber()
+	{
+		assertEquals(15,calculator.Add("1,2,3,4,5"));
+	}
 }

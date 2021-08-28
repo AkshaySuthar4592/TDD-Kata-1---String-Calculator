@@ -12,17 +12,18 @@ public class StringCalculator {
 	{
 		if(numbers.isEmpty())
 			return 0;
-		else if(numbers.length()==1)
-			return Integer.valueOf(numbers);
 		else
 		{
 			String num[] = numbers.split(",");
-			return sumOfNumbers(num[0],num[1]);
+			return sumOfNumbers(num);
 		}
 	}
 	
-	public static int sumOfNumbers(String a,String b)
+	public static int sumOfNumbers(String num[])
 	{
-		return Integer.valueOf(a)+Integer.valueOf(b);
+		int total = 0;
+		for(String n : num)
+			total+=Integer.valueOf(n);
+		return total;
 	}
 }
