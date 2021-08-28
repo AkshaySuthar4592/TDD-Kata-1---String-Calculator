@@ -12,4 +12,14 @@ public class TestCalculator {
 	{
 		assertEquals(0,calculator.Add(""));
 	}
+	@Test
+	public void oneNumber()
+	{
+		assertEquals(1,calculator.Add("1"));
+	}
+	@Test
+	public void twoNumber()
+	{
+		assertEquals(3,calculator.Add("1,2"));
+	}
 }
