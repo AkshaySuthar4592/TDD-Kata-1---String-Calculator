@@ -33,4 +33,9 @@ public class TestCalculator {
 	{
 		assertEquals(6,calculator.Add("1\n2,3"));
 	}
+	@Test
+	public void otherdelimiter()
+	{
+		assertEquals(3,calculator.Add("//;\n1;2"));
+	}
 }
