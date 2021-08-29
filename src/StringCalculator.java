@@ -44,7 +44,9 @@ public class StringCalculator {
 				else
 					negativeNum += (","+n);
 			}
-			total+=Integer.valueOf(n);
+			if(Integer.valueOf(n)<=1000)
+				total+=Integer.valueOf(n);
+			
 		}
 		if(!negativeNum.equals(""))
 		{

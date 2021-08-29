@@ -70,4 +70,9 @@ public class TestCalculator {
 	{
 		System.out.println("Add() method invoke time is : "+StringCalculator.GetCalledCount());
 	}
+	@Test
+	public void testNumberBiggerThanThousand()
+	{
+		assertEquals(2,calculator.Add("2,1001"));
+	}
 }
