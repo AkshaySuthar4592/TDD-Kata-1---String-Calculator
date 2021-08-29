@@ -80,4 +80,9 @@ public class TestCalculator {
 	{
 		assertEquals(6,calculator.Add("//[***]\n1***2***3"));
 	}
+	@Test
+	public void testMultipleDelimiter()
+	{
+		assertEquals(6,calculator.Add("//[*][%]\n1*2%3"));
+	}
 }
