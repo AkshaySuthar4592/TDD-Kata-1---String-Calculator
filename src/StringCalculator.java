@@ -29,8 +29,22 @@ public class StringCalculator {
 	public static int sumOfNumbers(String num[])
 	{
 		int total = 0;
+		String negativeNum = "";
 		for(String n : num)
+		{
+			if(Integer.valueOf(n)<0)
+			{
+				if(negativeNum.equals(""))
+					negativeNum = n;
+				else
+					negativeNum += (","+n);
+			}
 			total+=Integer.valueOf(n);
+		}
+		if(!negativeNum.equals(""))
+		{
+			throw new IllegalArgumentException("Negatives not allowed: " + negativeNum);
+		}
 		return total;
 	}
 }

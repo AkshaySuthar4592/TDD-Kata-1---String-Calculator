@@ -38,4 +38,16 @@ public class TestCalculator {
 	{
 		assertEquals(3,calculator.Add("//;\n1;2"));
 	}
+	@Test
+	public void testNegativeNumber()
+	{
+		try
+		{
+			calculator.Add("1,-2");
+		}
+		catch(IllegalArgumentException E)
+		{
+			assertEquals(E.getMessage(), "Negatives not allowed: -2");
+		}
+	}
 }
