@@ -49,5 +49,13 @@ public class TestCalculator {
 		{
 			assertEquals(E.getMessage(), "Negatives not allowed: -2");
 		}
+		try
+		{
+			calculator.Add("1,-2,3,4,-5,-6");
+		}
+		catch(IllegalArgumentException E)
+		{
+			assertEquals(E.getMessage(), "Negatives not allowed: -2,-5,-6");
+		}
 	}
 }
