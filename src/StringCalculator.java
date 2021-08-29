@@ -15,14 +15,15 @@ public class StringCalculator {
 			return 0;
 		else
 		{
-			String delimiter = ",";
+			String delimiter = ",|\n";
 			if(numbers.matches("//(.*)\n(.*)"))
 			{
-				delimiter=Character.toString(numbers.charAt(2));
-				numbers = numbers.substring(4);
+				int indexOfNewLine = numbers.indexOf("\n");
+				delimiter = numbers.substring(2, indexOfNewLine);
+				numbers = numbers.substring(indexOfNewLine+1);
 			}
 			
-			String num[] = numbers.split(delimiter+"|\n");
+			String num[] = numbers.split("["+delimiter+ "]+");
 			return sumOfNumbers(num);
 		}
 	}
