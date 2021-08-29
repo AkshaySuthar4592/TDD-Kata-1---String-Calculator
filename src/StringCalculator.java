@@ -3,13 +3,14 @@ import java.io.*;
 import java.lang.*;
 
 public class StringCalculator {
-	
+	static int count=0;
 	public static void main(String args[])
 	{
 		
 	}
 	public static int Add(String numbers)
 	{
+		count++;
 		if(numbers.isEmpty())
 			return 0;
 		else
@@ -26,6 +27,10 @@ public class StringCalculator {
 		}
 	}
 	
+	public static int GetCalledCount()
+	{
+		return count;
+	}
 	public static int sumOfNumbers(String num[])
 	{
 		int total = 0;

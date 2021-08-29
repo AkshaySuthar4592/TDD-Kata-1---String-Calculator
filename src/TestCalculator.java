@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 import org.junit.Test;
+import org.junit.*;
 
 public class TestCalculator {
 	
@@ -8,6 +9,11 @@ public class TestCalculator {
 		org.junit.runner.JUnitCore.main("TestCalculator");
 	}
 	StringCalculator calculator = new StringCalculator();
+	@BeforeClass
+	public static void add1MethodCount()
+	{
+		System.out.println("Add() method invoke time is : "+StringCalculator.GetCalledCount());
+	}
 	@Test
 	public void emptyString()
 	{
@@ -57,5 +63,11 @@ public class TestCalculator {
 		{
 			assertEquals(E.getMessage(), "Negatives not allowed: -2,-5,-6");
 		}
+	}
+	
+	@AfterClass
+	public static void addMethodCount()
+	{
+		System.out.println("Add() method invoke time is : "+StringCalculator.GetCalledCount());
 	}
 }
